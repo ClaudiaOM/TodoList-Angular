@@ -1,0 +1,15 @@
+<div *ngIf="task">
+    <h2>{{task.title}}</h2>
+
+    <form>
+        Name:
+        <input [(ngModel)]="task.title" placeholder="Title" name="Title"/>
+        Description: 
+        <input [(ngModel)]="task.description" placeholder="Description" name="Description"/>
+
+        <button (click)="updateTask(task)" *ngIf="task.id">Update</button>
+        <button (click)="deleteTask(task)" *ngIf="task.id">Delete</button>
+        <button (click)="createTask(task)" *ngIf="!task.id">Create</button>
+
+    </form>
+</div>
